@@ -39,6 +39,18 @@
 				<section>
                     <div class="content-box">
                         <div class="text-box txtl">
+                            <h2>Cyber-Duck Ltd</h2>
+                            <h3>Digital Transformation Agency</h3>
+                            <p>London, UK</p>
+                        </div>
+                        <div class="img-box">
+                            <img src="dist/images/favicon.png" alt="Cyber-Duck" width="400" style="background:white">
+                        </div>
+                    </div>
+                </section>
+				<section>
+                    <div class="content-box">
+                        <div class="text-box txtl">
                             <h1>The whats and whys</h1>
                         </div>
                     </div>
@@ -58,7 +70,7 @@
                                     <td><strong>Robust: </strong>Content must be robust enough that it can be interpreted reliably by a wide variety of user agents</td>
                                 </tr>
                             </table>
-                            <p>https://www.w3.org/WAI/standards-guidelines/wcag/</p>
+                            <p><a href="https://www.w3.org/WAI/standards-guidelines/wcag/">https://www.w3.org/WAI/standards-guidelines/wcag/</a></p>
                         </div>
                     </div>
                 </section>
@@ -66,7 +78,7 @@
                     <div class="content-box">
                         <div class="text-box txtl">
                             <h2>What it isn't?</h2>
-                            <p><strong>Accessibility shares (and overlaps) elements with other practices like UX, Human Centred Design, Universal Design, etc. But is not the same</strong></p>
+                            <p><strong>Accessibility shares (and overlaps) elements with other practices like UX, Human Centred Design, Universal Design, etc. But is not the same</strong>.</p>
                             <table>
                                 <tr>
                                     <td><strong>Inclusivity: </strong> applies to users from diverse backgrounds and cultures, not only disabled</td>
@@ -187,29 +199,62 @@
 				<section>
                     <div class="content-box">
                         <div class="text-box txtl">
+                            <h2>HTML / Links</h2>
+                            <p><strong>Links can get pulled out of context.</strong></p>
+                            <ul>
+                                <li>List of out of context links can be confusing if they contain the same text</li>
+                                <li>You can use non-visible labels to help users identify links function</li>
+                                <li>Or simply implement link tags that surround more of the context</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+				<section>
+                    <div class="content-box">
+                        <div class="text-box txtl">
                             <h2>HTML / Attributes</h2>
-                            <p><strong>From roles, to aria to specific values, many attributes aid with accessibility.</strong></p>
+                            <p><strong>From roles, to aria, to specific values, many attributes aid with accessibility.</strong></p>
                             <table>
                                 <tr>
-                                    <td>
+                                    <td style="vertical-align:top">
                                         <ul>
                                             <li>Role (main, footer, banner): to identify specific areas</li>
-                                            <li>Role (tablist, tab, button): to identify specific widgets</li>
+                                            <li>Role (tablist, tab, button): to identify widgets</li>
                                             <li>Role (presentation): to remove semantic meaning</li>
-                                            <li>Aria (expanded, hidden, current): to identify state</li>
+                                            <li>Aria (aria-expanded, aria-hidden, aria-current): to identify state</li>
                                         </ul>
                                     </td>
-                                    <td>
+                                    <td style="vertical-align:top">
                                         <ul>
-                                            <li>Aria (label, labelledby): to name components</li>
-                                            <li>Aria (live): to indicate live changes on a page</li>
-                                            <li>Aria (live): to indicate live changes on a page</li>
+                                            <li>Aria (aria-label, aria-labelledby): to name components</li>
+                                            <li>Aria (aria-live: polite, off, assertive): to indicate live changes on a page</li>
                                             <li>Alt, Desc: to provide content/context to users</li>
                                         </ul>
                                     </td>
                                 </tr>
                             </table>
-                            <p>https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques</p>
+                            <p><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques</a></p>
+                        </div>
+                    </div>
+                </section>
+				<section>
+                    <div class="content-box">
+                        <div class="text-box txtl">
+                            <h2>HTML / Skip link</h2>
+                            <p><strong>Add a skip to content link as the first element of any page.</strong></p>
+                            <p><code>&lt;a href="#main-content" class="skip-link"&gt;Skip to content&lt;/a&gt;</code></p>
+                            <pre>
+                                <code>
+.skip-link {
+	position: absolute;
+	top: -50px;
+	left: 0;
+	&:focus {
+		top: 0;
+	}
+}
+                                </code>
+                            </pre>
                         </div>
                     </div>
                 </section>
@@ -223,7 +268,45 @@
                         <div class="text-box txtl">
                             <h2>CSS</h2>
                             <p><strong>Important to understand the effect of CSS on accessibility.</strong></p>
-                            
+                        </div>
+                    </div>
+                </section>
+				<section>
+                    <div class="content-box">
+                        <div class="text-box txtl">
+                            <h2>CSS / Display</h2>
+                            <p><strong>CSS Display modes have an effect on how a page is perceived.</strong></p>
+                            <p>When using <code>display: none;</code> or <code>visibility: hidden;</code> on an element, the element is visually removed and also removed from assistive technologies.</p>
+                            <p>Using <code>opacity: 0;</code> or other tricks like <code>overflow: hidden;</code> can visually hide an element from the page but still appears in the tree for assistive technologies.</p>
+                        </div>
+                    </div>
+                </section>
+				<section>
+                    <div class="content-box">
+                        <div class="text-box txtl">
+                            <h2>CSS / Positioning</h2>
+                            <p><strong>With modern CSS there are many ways to change the position and order of elements on a page.</strong></p>
+                            <p>But be careful about your HTML order, because this is what's used for assistive technologies.</p>
+                            <p>Using <code>flex-direction: row-reverse;</code> or <code>order: 2;</code> properties to alternate sections is better than making the HTML or JS replicate this effect.</p>
+                        </div>
+                    </div>
+                </section>
+				<section>
+                    <div class="content-box">
+                        <div class="text-box txtl">
+                            <h2>CSS / Focus/Hover/Active</h2>
+                            <p><strong>Always visually indicate when something is selected or focused.</strong></p>
+                            <p>Don't remove focus styles from the browser, or replace them with alternative options to ensure actionable elements are clearly indicated as active/current.</p>
+                        </div>
+                    </div>
+                </section>
+				<section>
+                    <div class="content-box">
+                        <div class="text-box txtl">
+                            <h2>CSS / Text</h2>
+                            <p><strong>Make sure text is big enough to be readable and have sufficient spacing.</strong></p>
+                            <p>Font styling can have an impact as well. Use +16px to avoid phone auto-zoom on fields.</p>
+                            <p>Make sure the text containers are flexible for dyslexic users who may change the font and spacing.</p>
                         </div>
                     </div>
                 </section>
@@ -237,9 +320,9 @@
                         <div class="text-box txtl">
                             <h2>JS / Reflecting state</h2>
                             <p><strong>When working with interface elements that change state, like accordions, tabs, toggles, etc. make use of JS and aria attributes to programmatically indicate their current visual state with the value true or false.</strong></p>
-                            <p><code>aria-selected aria-hidden aria-hidden aria-expanded aria-checked</code></p>
-                            <p>https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques</p>
-                            <p>https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Tab_Role</p>
+                            <p><code>aria-selected aria-hidden aria-expanded aria-checked aria-current</code></p>
+                            <p><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques</a></p>
+                            <p><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Tab_Role">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Tab_Role</a></p>
                         </div>
                     </div>
                 </section>
@@ -249,7 +332,44 @@
                             <h2>JS / Managing focus</h2>
                             <p><strong>Interactive elements that direct the user to a different part of the page using JS animated scrolling  should ensure the focus is applied to the target element so they can continue navigating from that point using the keyboard.</strong></p>
                             <p>A relatively easy to achieve this is by making the target element reachable via keyboard (tabbable) (if it’s not already) using tabindex=“-1” and then applying a focus() function to it.</p>
-                            <p>https://css-tricks.com/smooth-scrolling-accessibility/</p>
+                            <p><a href="https://css-tricks.com/smooth-scrolling-accessibility/">https://css-tricks.com/smooth-scrolling-accessibility/</a></p>
+                        </div>
+                    </div>
+                </section>
+				<section>
+                    <div class="content-box">
+                        <div class="text-box txtl">
+                            <h2>JS / Animations</h2>
+                            <p><strong>Make sure users can stop/pause them.</strong></p>
+                            <p>Provide facilities to stop all animations, and ensure the animations are sensible, and that they ad value to the experience.</p>
+                            <p>Many uses of animation are unwarranted</p>
+                        </div>
+                    </div>
+                </section>
+				<section>
+                    <div class="content-box">
+                        <div class="text-box txtl">
+                            <h2>JS / Form errors / alerts</h2>
+                            <p><strong>Use <code>role="alert"</code> and make errors be present in the code at all times, trigger visibility when required.</strong></p>
+                            <p>Also with other alerts non-form related, use <code>aria-live="true"</code> to indicate content that might change after the page loads.</p>
+                        </div>
+                    </div>
+                </section>
+				<section>
+                    <div class="content-box">
+                        <div class="text-box txtl">
+                            <h2>JS / Plugins & widgets</h2>
+                            <p><strong>Animations, Carousels, etc are too often not compliant, or have wrong implementation.</strong></p>
+                            <p>Sometimes you need to find an alternative or modify the plugin to make it compliant.</p>
+                        </div>
+                    </div>
+                </section>
+				<section>
+                    <div class="content-box">
+                        <div class="text-box txtl">
+                            <h2>JS / inobtrusive & purposeful</h2>
+                            <p><strong>Applications written in pure JS often don't consider accessibility principles.</strong></p>
+                            <p>JavaScript has plenty of capabilities to make sites and apps accessible, but the work has to be put in, from the planning stage of the project.</p>
                         </div>
                     </div>
                 </section>
@@ -328,6 +448,7 @@
                                         <ul>
                                             <li><a href="https://accesslint.com">Linter</a> </li>
                                             <li><a href="https://www.a11yproject.com">https://www.a11yproject.com</a> for many more</li>
+                                            <li><a href="https://makeitfable.com">Crowd sourced a11y testing</a></li>
                                         </ul>
                                     </td>
                                 </tr>
