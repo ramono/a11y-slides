@@ -1,0 +1,52 @@
+Intro
+- Disclaimers:
+  - Not a live coding session, sorry to disappoint
+  - We can expand on this if you guys want to have a more technical session with a case study and more specific code samples
+
+- Been working a front end developer, now tech lead and helping our team grow our accessibility knowledge
+- We help companies transition to a more efficient work flow and effective online presence
+
+Whats & Whys
+- People clinically blind, or deaf or with motor impediments, also people with cognitive disabilities like dyslexia for example, or even temporary
+like an accident, maternity, etc
+- Perceivable, elements of the app are easily recognised
+- Understandable, that the controls and elements make sense for them
+- Operable, user able to trigger actions where needed
+- Robust, survive against different environments and conditions, like a phone in the sun, or able to be used with a screen reader
+
+- Inclusivity is more when you add multiple languages to make sure users understand your content, or details like a flexible or comprehensive gender selector
+- Universal Design, close but is more about approaching design challenges in ways that yield products that directly work better for everybody
+
+Level
+- Level can update requirements on a previous level, like colour contrast, on AA is 4.5:1 and in level AAA is 7:1
+- Show contrast ratio
+
+Important
+- Colorado law recently passed requires public service websites to comply
+- There might always be somewhere else users can go, so it's likely also your loss
+
+It fits
+- Design is one of the most important aspects, specially UX design because it indicates how the product should work, not only the way it looks
+
+Landmarks
+- Asistive technologies can have an array of tools to help users navigate complex pages, including identifying specific areas by landmark, or page structure by headings, and also lists of links
+
+Aria
+- With values true or false to identify state
+- With a string or the ID value of another element
+
+- Skip link allows keyboard and screen reader users not have to tab/read through a long list of elements every time they land on a page
+
+CSS
+- We control how the page looks and many times how it behaves
+- Sometimes aria-label works better 
+- Font styling may apply to the font choice itself, look at what heppened to twitter recently where the new font was giving some users headaches
+- Some users (specially with Dyslexia) will apply custom styling to websites to change the font to a monospaced version and increase the letter spacing and line-height.
+
+JS
+- Change state, tabs, accordions, toggable elements, pagination
+- Focus, like opening and closing a dialog, ensure people are not tabbibg through invisible parts
+- Animation can be very distracting for people with ADHD
+- Alerts, use CSS + JS to change its status
+- Aria live for a live-update feature on articles
+- Widgets, sometimes they try and fail
